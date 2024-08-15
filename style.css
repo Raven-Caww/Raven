@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins);
+* {
+    font-family: "Poppins", sans-serif;
+    border: red 1px dotted;
+}
+body {
+    min-height: 300vh;
+    background-image: url(ravenaigen.webp);
+    filter: opacity(99%);
+    
+}
+main {
+    position: sticky;
+    top:0;
+    background-color: #050105;
+    margin-top: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    filter: drop-shadow(30px 30px 25px #180d18);
+    
+}
+h1 {
+    color: white
+}
+.tobeblurred {
+    backdrop-filter: blur(5px);
+}

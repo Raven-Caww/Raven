@@ -7,6 +7,7 @@
     --shirt-colour: #353a35;
     --shirt-darker-colour: #2a3535;
     --shirt-even-darker-colour: #222b2b;
+    --shirt-black-darker-colour: #181818;
     --hair-colour: #f0b6bb;
     --hair-darker-colour: #ec9d9c;
     --pants-colour: #c3d9fe;
@@ -14,14 +15,16 @@
     --background-colour:#ffa59b;
     --background-darker-colour: #ee5046;
 }
-* {
 
+
+* {
+    font-size: clamp(1.3rem, 2vw, 2rem);
     /* border: white 2px dotted; */
 }
 body {
     /* min-height: 300vh; */
     /* background-image: linear-gradient(to left bottom, #000000, #030001, #12000e, #1c0020, #240037); */
-    background-color: var(--shirt-darker-colour);
+    background-color: var(--shirt-black-darker-colour);
 }
 
 
@@ -29,61 +32,21 @@ h1,h2,h3,h4 {
     /* color: rgb(249, 244, 255); */
     color:var(--skin-colour);
 }
-h1 {
-    font-size: 100px;
-    font-family: "poppins";
-}
-h2 {
-    font-size: 45px;
-}
-h3 {
-    font-size: 30px;
-}
-@media (max-width = 800px) {
-    .quote {
-        font-family: 'georgia light';
-        text-align:start;
-        text-shadow: 1px 1px 5px black;
-        margin-top: 100px;
-        margin-left: 100px;
-        width:200px;
-    }
-}
 .quote {
-    font-family: 'georgia light';
     text-align: center;
-    text-shadow: 1px 1px 5px black;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    width:max-content;
+    font-family: 'georgia light';
+    padding: 2rem;
+    color: var(--skin-colour);
 }
 
 .quote span {
-    font-size: 20px;
-    color: var(--skin-colour);
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
     margin-bottom:70px;
 }
 
-.quote p {
-    font-size: 30px;
-    color: var(--skin-colour);
-}
-
-
-
-
-
-
 
 main {
-        /* position: sticky; */
-    top:0;
-
-    margin-top: 70%;
-    /* margin-left: 5%;
-    margin-right: 5%; */
-
+    margin-top: 50vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -94,109 +57,11 @@ main {
 
 main h1 {
     position: absolute;
+    font-size: clamp(5rem, 6vw, 7rem);
     margin-top: 0;
 }
 
 
-
-
-
-
-
-
-img {
-    position: absolute;
-    right:0;
-    filter: drop-shadow(5px 5px 20px #000000);
-}
-
-.box1 {
-    float: left;
-}
-.box1,.box2 {
-    z-index: 2;
-    width: 45%;
-    min-height: 100vh;
-    background-color: var(--shirt-even-darker-colour);
-}
-
-/* Figure out media queries tomorrow! */
-
-@media (max-width:700px) {
-    @keyframes GETOUTRIGHT {
-        to {
-            transform: translateX(100vw); /* Ensure you're using translateX for horizontal movement */
-        }
-    }
-}
-    @keyframes GETOUTLEFT {
-        to {
-            transform: translateX(-100vw); /* Use translateX for horizontal movement */
-        }
-    }
-@media (max-width: 800px) {
-    @keyframes GETOUTRIGHT {
-        to {
-            transform: translateX(700px); /* Ensure you're using translateX for horizontal movement */
-        }
-    }
-    
-    @keyframes GETOUTLEFT {
-        to {
-            transform: translateX(-700px); /* Use translateX for horizontal movement */
-        }
-    }
-    
-}
-@media (min-width: 1200px) {
-    @keyframes GETOUTRIGHT {
-        to {
-            transform: translateX(90%); /* Ensure you're using translateX for horizontal movement */
-        }
-    }
-    
-    @keyframes GETOUTLEFT {
-        to {
-            transform: translateX(-90%); /* Use translateX for horizontal movement */
-        }
-    }
-    
-}
-
-
-
-@keyframes COMEBACK {
-    to {
-        transform: translateX(0); /* Return to the original position */
-    }
-}
-
-@keyframes COMEBACKLEFT {
-    to {
-        transform: translateX(0); /* Return to the original position */
-    }
-}
-
-.translatingLeft {
-    animation: GETOUTLEFT 1s forwards; /* Moving left out of the screen */
-}
-
-.translatingRight {
-    animation: GETOUTRIGHT 1s forwards; /* Moving right out of the screen */
-}
-
-.reverseTranslatingLeft {
-    animation: COMEBACKLEFT 0.1s forwards; /* Smoothly return from left */
-    animation-fill-mode: forwards; /* Stay at the final position */
-}
-
-.reverseTranslatingRight {
-    animation: COMEBACK 0.1s forwards; /* Smoothly return from right */
-    animation-fill-mode: forwards; /* Stay at the final position */
-}
-.test {
-    min-height: 100vh;
-}
 .hidden {
     opacity: 0;
     filter: blur(10px);
@@ -207,21 +72,3 @@ img {
     filter: blur(0px);
     transition: opacity 1s;
 }
-
-
-
-/* Make hover transitions because gang shit */
-
-
-
-
-
-/* Scroll animation */
-
-/* Target the x,y of box1 and 2 */
-
-/* translate the x,y to -1000000000000000000000000000 */
-
-/* Over a period of time */
-
-/* Create the effects with fades */

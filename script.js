@@ -9,4 +9,3 @@ const observeForShowAndHidden = new IntersectionObserver((elements) => {
 });
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((elmt) => observeForShowAndHidden.observe(elmt));
-// One small issue, smaller screens don't like this... At all...

@@ -2,51 +2,101 @@
 @import url(https://fonts.googleapis.com/css2?family=Jost);
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
-    --skin-colour: #fee9dc;
-    --skin-darker-colour: #fed4c1;
-    --shirt-colour: #353a35;
-    --lighter-shirt-colour: #4f544f;
-    --shirt-darker-colour: #2a3535;
-    --shirt-even-darker-colour: #222b2b;
-    --shirt-black-darker-colour: #181818;
-    --hair-colour: #f0b6bb;
-    --hair-darker-colour: #ec9d9c;
-    --pants-colour: #c3d9fe;
-    --pants-darker-colour:#8a9bfb;
-    --background-colour:#ffa59b;
-    --background-darker-colour: #ee5046;
-}
-
-
-* {
-    font-size: clamp(1.3rem, 2vw, 2rem);
-    /* border: red 2px dotted; */
+    --header1-colour: #fefac2;
+    --header2-colour: #fefac2cb;
+    --quote-colour: #fefac2cb;
+    --header3-colour: #2d2d30;
+    --background-colour: #181818;
+    --paragraph-colour: #c7c6c2;
+    --span-colour: #3a3a3e;
 }
 body {
-    /* min-height: 300vh; */
-    /* background-image: linear-gradient(to left bottom, #000000, #030001, #12000e, #1c0020, #240037); */
-    background-color: var(--shirt-black-darker-colour);
+    background-color: var(--background-colour);
 }
 
 
-h1,h2,h3,h4 {
-    /* color: rgb(249, 244, 255); */
-    color:var(--skin-colour);
+
+
+
+/* Defining tag sizes and colours */
+h1 {
+    color: var(--header1-colour);
+    font-size: clamp(5rem, 7vw, 9rem);
 }
+h2 {
+    color: var(--header2-colour);
+    font-size: clamp(3rem, 3vw, 4rem);
+    margin-top: 0;
+}
+h3 {
+    color: var(--header3-colour);
+    font-size: clamp(2.5rem, 4vw, 5rem);
+}
+h4 {
+    color: var(--quote-colour);
+    font-size: clamp(2rem, 4vw, 6rem);
+    margin-bottom: 0;
+}
+span {
+    color:var(--span-colour);
+    font-size: clamp(2rem, 3vw, 4rem);
+}
+p {
+    color:var(--paragraph-colour);
+    font-size: clamp(2rem, 3vw, 4rem);
+}
+li {
+    color:var(--span-colour);
+    font-size: clamp(2rem, 3vw, 4rem);
+}
+/* Mess around with the sizing and maybe colours if needed! */
+
+
+
+
+
+/* Make this arrow animate when the "scroll down" thing appears. */
+.arrow {
+    display:flex;
+    justify-content: center;
+
+}
+.rectangle {
+    rotate: 180deg;
+    width: 50px;
+    height: 130px;
+    background: red;
+}
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+}
+
+
+
+
+
+
+/* Quote section */
 .quote {
     text-align: center;
-    font-family: 'georgia light';
-    padding: 2rem; 
-    color: var(--skin-darker-colour);
-}
-
-.quote span {
-    font-size: clamp(1rem, 1.2vw, 1.3rem);
-    /* margin-bottom:70px; */
-    color:#4e4e53;
 }
 
 
+
+
+
+
+
+
+
+
+/* Create more content */
+
+/* Content section */
 main {
     margin-top: 100vh;
     display: flex;
@@ -54,55 +104,36 @@ main {
     align-items: center;
     overflow: hidden;
 }
-nav {
-    position: sticky;
-    top:0;
-    z-index: 1;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    color:var(--shirt-colour);
-    filter: blur(20px 20px 20px black);
-}
-nav a {
-    color:var(--shirt-colour);
-    filter: drop-shadow(2px 2px 2px black);
-    text-decoration: none;
-}
-nav a:active {
-    background-color: var(--pants-darker-colour);
-}
-nav a:hover {
-    color:var(--pants-darker-colour);
-}
-
-
-main h1 {
-    font-size: clamp(5rem, 6vw, 7rem); 
-    margin-top: 0;
-    margin-bottom: 0;
-} 
-main h3 {
-    font-size: clamp(1rem, 3vw, 5rem); 
-    /* margin: 0; */
-    color:#dccabf;
-}
 main li,span {
-    color: var(--lighter-shirt-colour);
-    font-size: clamp(1rem, 2vw, 4rem);
-    margin-bottom: 0.5rem;
     text-decoration: none;
     list-style: none;
+    margin-bottom: 0.3rem;
 }
 
+
+
+
+/* Dont change */
+#scrollHint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    
+}
+
+
+
+
+/* Dont change */
 .hidden {
     opacity: 0;
-    filter: blur(10px);
-    transition: opacity 1s;
+    filter: blur(5px);
+    transition: opacity 1.5s ease;
 }
 .show {
     opacity: 1;
     filter: blur(0px);
-    transition: opacity 1s;
+    transition: opacity 1.5s ease;
 }

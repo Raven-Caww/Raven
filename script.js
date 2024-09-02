@@ -1,23 +1,27 @@
-const observeForShowAndHidden = new IntersectionObserver((elements) => {
-    console.log("Suki sucks")
-    elements.forEach((el) => {
-        if (el.isIntersecting) {
-            if (el.target.id != "scrollHint") {
-                el.target.classList.add('show');
-            } else {
-                setTimeout(() => {
-                    console.log("I fucking love you")
-                    scrollHint.classList.add('show');
-                    
-                }, 2500);
-            }
+// Select all elements with the 'scrollHint' class
+const scrollHints = document.querySelectorAll('.scrollHint');
 
+// Create an IntersectionObserver instance
+const observeForShowAndHidden = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            if (!entry.target.classList.contains('scrollHint')) {
+                entry.target.classList.add('show');
+            } else {
+                // If the element is of class 'scrollHint', wait 2.5 seconds before adding 'show'
+                setTimeout(() => {
+                    scrollHints.forEach((hint) => {
+                        hint.classList.add('show');
+                    });
+                }, 3000);
+            }
         } else {
-            el.target.classList.remove('show');
+            // Remove 'show' class when the element is not intersecting
+            entry.target.classList.remove('show');
         }
     });
 });
-const hiddenElements = document.querySelectorAll('.hidden');
-const scrollHint = document.getElementById('scrollHint');
-hiddenElements.forEach((elmt) => observeForShowAndHidden.observe(elmt));
 
+// Observe all elements with the 'hidden' class
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((element) => observeForShowAndHidden.observe(element));

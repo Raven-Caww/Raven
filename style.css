@@ -54,27 +54,31 @@ li {
 
 
 
-
-/* Make this arrow animate when the "scroll down" thing appears. */
 .arrow {
-    display:flex;
-    justify-content: center;
+    --t: 50%; /* control the tail part */
+    --h: 50%; /* control the head part */
+    aspect-ratio: 2/3;
+    height: 230px;
+    background: var(--header3-colour);
+    clip-path: polygon(calc(50% - var(--t)/2) 0,calc(50% - var(--t)/2) calc(100% - var(--h)),0 calc(100% - var(--h)),50% 100%,100% calc(100% - var(--h)),calc(50% + var(--t)/2) calc(100% - var(--h)),calc(50% + var(--t)/2) 0);
 
 }
-.rectangle {
-    rotate: 180deg;
-    width: 50px;
-    height: 130px;
-    background: red;
+.arrow {
+    animation: arrowDown 2s 3;
 }
-.triangle-down {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid red;
+@keyframes arrowDown {
+    from {
+        transform: translateY(-1000px);
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        transition: opacity 3s ease;
+    }
 }
-
 
 
 
@@ -114,12 +118,13 @@ main li,span {
 
 
 /* Dont change */
-#scrollHint {
+.scrollHint {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 0;
+    margin-bottom: 0;
+    overflow-y: hidden;
     
 }
 

@@ -9,6 +9,7 @@
     --background-colour: #181818;
     --paragraph-colour: #c7c6c2;
     --span-colour: #3a3a3e;
+    --list-colour: #c7c6c277;
 }
 body {
     background-color: var(--background-colour);
@@ -46,18 +47,10 @@ p {
     font-size: clamp(1.3rem, 3vw, 4rem);
 }
 li {
-    color:var(--span-colour);
+    color:var(--list-colour);
     font-size: clamp(1.3rem, 3vw, 4rem);
 }
 /* Mess around with the sizing and maybe colours if needed! */
-
-
-.orientateLeft {
-    overflow: hidden;
-    left:0;
-    margin: 0;
-    
-}
 
 .arrow {
     --t: 50%; /* control the tail part */
@@ -100,7 +93,14 @@ li {
 
 
 
-
+.orientateLeft {
+    overflow: hidden;
+    left:0;
+    margin: 0;
+    p {
+        font-size: clamp(1rem, 2vw, 4rem);
+    }
+}
 
 
 /* Create more content */
@@ -110,8 +110,6 @@ main {
     margin-top: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    overflow: hidden;
 }
 main li,span {
     text-decoration: none;

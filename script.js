@@ -25,3 +25,16 @@ const observeForShowAndHidden = new IntersectionObserver((entries) => {
 // Observe all elements with the 'hidden' class
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((element) => observeForShowAndHidden.observe(element));
+
+let createPopup = document.getElementById('contactPopup');
+document.addEventListener("click", (e) => {
+    if (e.target.id == "back2Top") {
+        // Chrome and Firefox
+        document.documentElement.scrollTop = 0;
+        // Safari (BLEHHH)
+        document.body.scrollTo = 0;
+    }
+    if (e.target.id == "contactMe") {
+        alert("Raven is 2 lazyyyy to set that up. :\\\\\\\\");
+    }
+})

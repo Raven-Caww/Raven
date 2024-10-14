@@ -20,7 +20,7 @@ body {
     background-color: var(--background-colour);
 }
 * {
-    border:red 1px dotted;
+    /* border:red 1px dotted; */
 }
 
 

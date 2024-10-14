@@ -20,7 +20,7 @@ body {
     background-color: var(--background-colour);
 }
 * {
-    /* border:red 1px dotted; */
+    border:red 1px dotted;
 }
 
 
@@ -58,6 +58,10 @@ li {
     color:var(--list-colour);
     font-size: clamp(1.3rem, 3vw, 4rem);
 }
+a {
+    color: var(--light-red-background-colour);
+    text-decoration: none;
+}
 button {
     font-size: clamp(1rem, 2.4vw, 3rem);
 }
@@ -90,7 +94,23 @@ img {
 .raven { grid-area: 1 / 2 / 4 / 3;}
 
 
-
+.pdfs-grid {
+    display: grid;
+    display:flex;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap:2em;
+    
+}
+    
+.resume { grid-area: 1 / 1 / 2 / 2; min-width: max-content;}
+.cv { grid-area: 1 / 2 / 2 / 3; min-width: max-content;}
+.resume:hover,.cv:hover {
+    filter:drop-shadow(5px 10px 5px black);
+}
+.resume:active,.cv:active {
+    filter:brightness(1.5)
+}
 
 /* Arrow \/ */
 .arrow {
